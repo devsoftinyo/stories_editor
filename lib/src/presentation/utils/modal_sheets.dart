@@ -69,7 +69,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   const Text(
-                    'Düzenlemeler İptal Edilsinmi?',
+                    'Düzenlemelercddd İptal Edilsinmi?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 22,
