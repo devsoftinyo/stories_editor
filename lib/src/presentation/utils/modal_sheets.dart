@@ -54,7 +54,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
               padding: const EdgeInsets.only(
                   top: 25, bottom: 5, right: 20, left: 20),
               alignment: Alignment.center,
-              //height: 280,
+              height: 280,
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
                   color: HexColor.fromHex('#262626'),
@@ -66,7 +66,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                         blurRadius: 4),
                   ]),
               child: Column(
-                mainAxisSize: MainAxisSize.max,
+                mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
                     'Düzenlemelercddd İptal Edilsinmi?',
