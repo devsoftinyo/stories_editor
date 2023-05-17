@@ -66,7 +66,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                         blurRadius: 4),
                   ]),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
+                mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   const Text(
                     'Düzenlemeler İptal Edilsinmi?',
