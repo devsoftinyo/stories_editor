@@ -100,7 +100,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       Navigator.of(context).pop(true);
                     },
                     child: Text(
-                      'İptal',
+                      'İptal Et',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.redAccent.shade200,
