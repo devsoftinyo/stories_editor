@@ -69,7 +69,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
-                    'Discard Edits?',
+                    'Düzenlemeler İptal Edilsinmi?',
                     style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
@@ -80,7 +80,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     height: 20,
                   ),
                   const Text(
-                    "If you go back now, you'll lose all the edits you've made.",
+                    "Şimdi geri dönerseniz, yaptığınız tüm düzenlemeleri kaybedersiniz.",
                     style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
@@ -99,7 +99,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       Navigator.of(context).pop(true);
                     },
                     child: Text(
-                      'Discard',
+                      'İptal',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.redAccent.shade200,
@@ -132,16 +132,17 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                             saveToGallery: true);
                         if (response) {
                           _dispose(
-                              context: context, message: 'Successfully saved');
+                              context: context,
+                              message: 'Kayıt İşlemi Başarılı');
                         } else {
-                          _dispose(context: context, message: 'Error');
+                          _dispose(context: context, message: 'Hata');
                         }
                       } else {
-                        _dispose(context: context, message: 'Draft Empty');
+                        _dispose(context: context, message: 'Çizim Boş');
                       }
                     },
                     child: const Text(
-                      'Save Draft',
+                      'Çizimi Kaydet',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.white,
@@ -163,7 +164,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       Navigator.of(context).pop(false);
                     },
                     child: const Text(
-                      'Cancel',
+                      'Çık',
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.white,
