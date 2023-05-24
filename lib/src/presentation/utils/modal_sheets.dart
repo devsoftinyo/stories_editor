@@ -55,7 +55,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
               color: HexColor.fromHex('#262626'),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25),
+              padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 5),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
@@ -79,6 +79,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                         color: Colors.white54,
                         letterSpacing: 0.1),
                     textAlign: TextAlign.center,
+                    maxLines: 3,
                   ),
                   const SizedBox(
                     height: 40,
