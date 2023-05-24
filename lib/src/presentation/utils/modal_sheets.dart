@@ -42,7 +42,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
   return (await showDialog(
         context: context,
         barrierColor: Colors.black38,
-        barrierDismissible: true,
+        // barrierDismissible: true,
         builder: (c) => Dialog(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -51,8 +51,8 @@ Future<bool> exitDialog({required context, required contentKey}) async {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Container(
-              padding: const EdgeInsets.only(
-                  top: 25, bottom: 5, right: 20, left: 20),
+              // padding: const EdgeInsets.only(
+              //     top: 25, bottom: 5, right: 20, left: 20),
               alignment: Alignment.center,
               //height: 280,
               decoration: BoxDecoration(
@@ -69,7 +69,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   const Text(
-                    'Düzenlemelercddd İptal Edilsinmi?',
+                    'Düzenlemeler İptal Edilsinmi?',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         fontSize: 22,
