@@ -49,8 +49,10 @@ Future<bool> exitDialog({required context, required contentKey}) async {
           insetAnimationDuration: const Duration(milliseconds: 300),
           insetAnimationCurve: Curves.ease,
           child: Container(
-            decoration: BoxDecoration(borderRadius: BorderRadius.circular(24)),
-            color: HexColor.fromHex('#262626'),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24),
+              color: HexColor.fromHex('#262626'),
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
