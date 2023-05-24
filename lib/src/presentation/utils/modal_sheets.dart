@@ -84,14 +84,14 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     height: 40,
                   ),
 
-                  /// discard
+                  /// Sil Butonu,basıldığında kaydetmeden çıkar
                   AnimatedOnTapButton(
                     onTap: () async {
                       _resetDefaults(context: context);
                       Navigator.of(context).pop(true);
                     },
                     child: Text(
-                      langDataGlobal.dialog!.cancel.toString(),
+                      langDataGlobal.dialog!.delete.toString(),
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.redAccent.shade200,
@@ -107,49 +107,49 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     ),
                   ),
 
-                  /// save and exit
-                  AnimatedOnTapButton(
-                    onTap: () async {
-                      final _paintingProvider =
-                          Provider.of<PaintingNotifier>(context, listen: false);
-                      final _widgetProvider =
-                          Provider.of<DraggableWidgetNotifier>(context,
-                              listen: false);
-                      if (_paintingProvider.lines.isNotEmpty ||
-                          _widgetProvider.draggableWidget.isNotEmpty) {
-                        /// save image
-                        var response = await takePicture(
-                            contentKey: contentKey,
-                            context: context,
-                            saveToGallery: true);
-                        if (response) {
-                          _dispose(
-                              context: context,
-                              message: langDataGlobal.dialog!.saveSuccess
-                                  .toString());
-                        } else {
-                          _dispose(
-                            context: context,
-                            message: langDataGlobal.dialog!.error.toString(),
-                          );
-                        }
-                      } else {
-                        _dispose(
-                          context: context,
-                          message: langDataGlobal.dialog!.emptyDraw.toString(),
-                        );
-                      }
-                    },
-                    child: Text(
-                      langDataGlobal.dialog!.saveSuccess.toString(),
-                      style: const TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          letterSpacing: 0.5),
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
+                  /// Kaydet Ve Çık ,Çizimi Kaydet ve Çık
+                  // AnimatedOnTapButton(
+                  //   onTap: () async {
+                  //     final _paintingProvider =
+                  //         Provider.of<PaintingNotifier>(context, listen: false);
+                  //     final _widgetProvider =
+                  //         Provider.of<DraggableWidgetNotifier>(context,
+                  //             listen: false);
+                  //     if (_paintingProvider.lines.isNotEmpty ||
+                  //         _widgetProvider.draggableWidget.isNotEmpty) {
+                  //       /// save image
+                  //       var response = await takePicture(
+                  //           contentKey: contentKey,
+                  //           context: context,
+                  //           saveToGallery: true);
+                  //       if (response) {
+                  //         _dispose(
+                  //             context: context,
+                  //             message: langDataGlobal.dialog!.saveSuccess
+                  //                 .toString());
+                  //       } else {
+                  //         _dispose(
+                  //           context: context,
+                  //           message: langDataGlobal.dialog!.error.toString(),
+                  //         );
+                  //       }
+                  //     } else {
+                  //       _dispose(
+                  //         context: context,
+                  //         message: langDataGlobal.dialog!.emptyDraw.toString(),
+                  //       );
+                  //     }
+                  //   },
+                  //   child: Text(
+                  //     langDataGlobal.dialog!.saveSuccess.toString(),
+                  //     style: const TextStyle(
+                  //         fontSize: 16,
+                  //         color: Colors.white,
+                  //         fontWeight: FontWeight.bold,
+                  //         letterSpacing: 0.5),
+                  //     textAlign: TextAlign.center,
+                  //   ),
+                  // ),
                   const SizedBox(
                     height: 22,
                     child: Divider(
@@ -157,7 +157,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     ),
                   ),
 
-                  ///cancel
+                  ///cancel butonu tıklandığında dialog ekranı kapanır
                   AnimatedOnTapButton(
                     onTap: () {
                       Navigator.of(context).pop(false);

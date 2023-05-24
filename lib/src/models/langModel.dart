@@ -20,30 +20,28 @@ class langModel {
 class Dialog {
   String? title;
   String? body;
-  String? cancel;
+  String? delete;
   String? save;
+
   String? quit;
-  String? saveSuccess;
   String? error;
   String? emptyDraw;
 
   Dialog(
       {this.title,
       this.body,
-      this.cancel,
+      this.delete,
       this.save,
       this.quit,
-      this.saveSuccess,
       this.error,
       this.emptyDraw});
 
   Dialog.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     body = json['body'];
-    cancel = json['cancel'];
+    delete = json['cancel'];
     save = json['save'];
-    quit = json['quit'];
-    saveSuccess = json['saveSuccess'];
+    quit = json['saveSuccess'];
     error = json['error'];
     emptyDraw = json['emptyDraw'];
   }
@@ -52,10 +50,9 @@ class Dialog {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['title'] = this.title;
     data['body'] = this.body;
-    data['cancel'] = this.cancel;
+    data['cancel'] = this.delete;
     data['save'] = this.save;
-    data['quit'] = this.quit;
-    data['saveSuccess'] = this.saveSuccess;
+    data['saveSuccess'] = this.quit;
     data['error'] = this.error;
     data['emptyDraw'] = this.emptyDraw;
     return data;
