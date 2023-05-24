@@ -24,6 +24,7 @@ class Dialog {
   String? quit;
   String? share;
   String? tapToType;
+  String? done;
 
   Dialog(
       {this.title,
@@ -31,7 +32,8 @@ class Dialog {
       this.delete,
       this.quit,
       this.share,
-      this.tapToType});
+      this.tapToType,
+      this.done});
 
   Dialog.fromJson(Map<String, dynamic> json) {
     title = json['title'];
@@ -40,6 +42,7 @@ class Dialog {
     quit = json['quit'];
     share = json['share'];
     tapToType = json['tapToType'];
+    done = json['done'];
   }
 
   Map<String, dynamic> toJson() {
@@ -50,6 +53,7 @@ class Dialog {
     data['quit'] = this.quit;
     data['share'] = this.share;
     data['tapToType'] = this.tapToType;
+    data['done'] = this.done;
     return data;
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
 import 'package:stories_editor/src/presentation/widgets/tool_button.dart';
+import 'package:stories_editor/stories_editor.dart';
 
 class TopTextTools extends StatelessWidget {
   final void Function() onDone;
@@ -138,9 +139,9 @@ class TopTextTools extends StatelessWidget {
                           color: Colors.transparent,
                           border: Border.all(color: Colors.white, width: 1.5),
                           borderRadius: BorderRadius.circular(15)),
-                      child: const Text(
-                        'Done',
-                        style: TextStyle(
+                      child: Text(
+                        langDataGlobal.dialog!.done.toString(),
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
