@@ -11,11 +11,14 @@ import 'package:stories_editor/src/domain/providers/notifiers/gradient_notifier.
 import 'package:stories_editor/src/domain/providers/notifiers/painting_notifier.dart';
 import 'package:stories_editor/src/domain/providers/notifiers/scroll_notifier.dart';
 import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
+import 'package:stories_editor/src/models/langModel.dart';
 import 'package:stories_editor/src/presentation/main_view/main_view.dart';
 
 export 'package:stories_editor/stories_editor.dart';
 
 class StoriesEditor extends StatefulWidget {
+  final Map<String, dynamic> langData;
+
   /// editor custom font families
   final List<String>? fontFamilyList;
 
@@ -61,16 +64,20 @@ class StoriesEditor extends StatefulWidget {
       this.onBackPress,
       this.onDoneButtonStyle,
       this.editorBackgroundColor,
-      this.galleryThumbnailQuality})
+      this.galleryThumbnailQuality,
+      required this.langData})
       : super(key: key);
 
   @override
   _StoriesEditorState createState() => _StoriesEditorState();
 }
 
+late langModel langDataGlobal;
+
 class _StoriesEditorState extends State<StoriesEditor> {
   @override
   void initState() {
+    langDataGlobal = langModel.fromJson(widget.langData);
     Paint.enableDithering = true;
     WidgetsFlutterBinding.ensureInitialized();
     SystemChrome.setPreferredOrientations(

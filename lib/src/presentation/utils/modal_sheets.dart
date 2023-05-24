@@ -11,6 +11,7 @@ import 'package:stories_editor/src/domain/sevices/save_as_image.dart';
 import 'package:stories_editor/src/presentation/utils/Extensions/hexColor.dart';
 import 'package:stories_editor/src/presentation/utils/constants/app_enums.dart';
 import 'package:stories_editor/src/presentation/widgets/animated_onTap_button.dart';
+import 'package:stories_editor/stories_editor.dart';
 
 /// create item of type GIF
 Future createGiphyItem(
@@ -58,10 +59,10 @@ Future<bool> exitDialog({required context, required contentKey}) async {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  const Text(
-                    'Düzenlemeler İptal Edilsinmi?',
+                  Text(
+                    langDataGlobal.dialog!.title.toString(),
                     textAlign: TextAlign.center,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
@@ -70,9 +71,9 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   const SizedBox(
                     height: 20,
                   ),
-                  const Text(
-                    "Şimdi geri dönerseniz, yaptığınız tüm düzenlemeleri kaybedersiniz.",
-                    style: TextStyle(
+                  Text(
+                    langDataGlobal.dialog!.body.toString(),
+                    style: const TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.w400,
                         color: Colors.white54,
@@ -90,7 +91,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       Navigator.of(context).pop(true);
                     },
                     child: Text(
-                      'İptal',
+                      langDataGlobal.dialog!.cancel.toString(),
                       style: TextStyle(
                           fontSize: 16,
                           color: Colors.redAccent.shade200,
@@ -124,17 +125,24 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                         if (response) {
                           _dispose(
                               context: context,
-                              message: 'Kayıt İşlemi Başarılı');
+                              message: langDataGlobal.dialog!.saveSuccess
+                                  .toString());
                         } else {
-                          _dispose(context: context, message: 'Hata');
+                          _dispose(
+                            context: context,
+                            message: langDataGlobal.dialog!.error.toString(),
+                          );
                         }
                       } else {
-                        _dispose(context: context, message: 'Çizim Boş');
+                        _dispose(
+                          context: context,
+                          message: langDataGlobal.dialog!.emptyDraw.toString(),
+                        );
                       }
                     },
-                    child: const Text(
-                      'Çizimi Kaydet',
-                      style: TextStyle(
+                    child: Text(
+                      langDataGlobal.dialog!.saveSuccess.toString(),
+                      style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -154,9 +162,9 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     onTap: () {
                       Navigator.of(context).pop(false);
                     },
-                    child: const Text(
-                      'Çık',
-                      style: TextStyle(
+                    child: Text(
+                      langDataGlobal.dialog!.quit.toString(),
+                      style: const TextStyle(
                           fontSize: 16,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
