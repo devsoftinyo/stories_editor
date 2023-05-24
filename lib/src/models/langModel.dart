@@ -33,16 +33,16 @@ class Dialog {
   Dialog.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     body = json['body'];
-    delete = json['cancel'];
-    quit = json['saveSuccess'];
+    delete = json['delete'];
+    quit = json['quit'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['title'] = this.title;
     data['body'] = this.body;
-    data['cancel'] = this.delete;
-    data['saveSuccess'] = this.quit;
+    data['delete'] = this.delete;
+    data['quit'] = this.quit;
     return data;
   }
 }

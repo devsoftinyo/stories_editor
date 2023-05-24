@@ -166,12 +166,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(
-                    height: 22,
-                    child: Divider(
-                      color: Colors.white10,
-                    ),
-                  ),
+                  const SizedBox(),
                 ],
               ),
             ),
