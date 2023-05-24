@@ -21,29 +21,20 @@ class Dialog {
   String? title;
   String? body;
   String? delete;
-  String? save;
-
   String? quit;
-  String? error;
-  String? emptyDraw;
 
-  Dialog(
-      {this.title,
-      this.body,
-      this.delete,
-      this.save,
-      this.quit,
-      this.error,
-      this.emptyDraw});
+  Dialog({
+    this.title,
+    this.body,
+    this.delete,
+    this.quit,
+  });
 
   Dialog.fromJson(Map<String, dynamic> json) {
     title = json['title'];
     body = json['body'];
     delete = json['cancel'];
-    save = json['save'];
     quit = json['saveSuccess'];
-    error = json['error'];
-    emptyDraw = json['emptyDraw'];
   }
 
   Map<String, dynamic> toJson() {
@@ -51,10 +42,7 @@ class Dialog {
     data['title'] = this.title;
     data['body'] = this.body;
     data['cancel'] = this.delete;
-    data['save'] = this.save;
     data['saveSuccess'] = this.quit;
-    data['error'] = this.error;
-    data['emptyDraw'] = this.emptyDraw;
     return data;
   }
 }

@@ -100,12 +100,6 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const SizedBox(
-                    height: 22,
-                    child: Divider(
-                      color: Colors.white10,
-                    ),
-                  ),
 
                   /// Kaydet Ve Çık ,Çizimi Kaydet ve Çık
                   // AnimatedOnTapButton(
@@ -170,6 +164,12 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                           fontWeight: FontWeight.bold,
                           letterSpacing: 0.5),
                       textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 22,
+                    child: Divider(
+                      color: Colors.white10,
                     ),
                   ),
                 ],
