@@ -48,13 +48,13 @@ Future<bool> exitDialog({required context, required contentKey}) async {
           elevation: 0,
           insetAnimationDuration: const Duration(milliseconds: 300),
           insetAnimationCurve: Curves.ease,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 24),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(24),
-                color: HexColor.fromHex('#262626'),
-              ),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24),
+              color: HexColor.fromHex('#262626'),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 25),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
