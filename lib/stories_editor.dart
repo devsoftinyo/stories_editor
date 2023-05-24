@@ -49,8 +49,6 @@ class StoriesEditor extends StatefulWidget {
   /// gallery thumbnail quality
   final int? galleryThumbnailQuality;
 
-  final String txtTitle;
-
   const StoriesEditor(
       {Key? key,
       required this.giphyKey,
@@ -63,8 +61,7 @@ class StoriesEditor extends StatefulWidget {
       this.onBackPress,
       this.onDoneButtonStyle,
       this.editorBackgroundColor,
-      this.galleryThumbnailQuality,
-      required this.txtTitle})
+      this.galleryThumbnailQuality})
       : super(key: key);
 
   @override
@@ -110,7 +107,6 @@ class _StoriesEditorState extends State<StoriesEditor> {
             ChangeNotifierProvider(create: (_) => TextEditingNotifier()),
           ],
           child: MainView(
-            txtTitle: widget.txtTitle,
             giphyKey: widget.giphyKey,
             onDone: widget.onDone,
             fontFamilyList: widget.fontFamilyList,

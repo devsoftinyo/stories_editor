@@ -58,8 +58,6 @@ class MainView extends StatefulWidget {
   /// gallery thumbnail quality
   final int? galleryThumbnailQuality;
 
-  final String txtTitle;
-
   /// editor custom color palette list
   List<Color>? colorList;
   MainView(
@@ -74,8 +72,7 @@ class MainView extends StatefulWidget {
       this.onBackPress,
       this.onDoneButtonStyle,
       this.editorBackgroundColor,
-      this.galleryThumbnailQuality,
-      required this.txtTitle})
+      this.galleryThumbnailQuality})
       : super(key: key);
 
   @override
@@ -320,7 +317,6 @@ class _MainViewState extends State<MainView> {
                             child: Align(
                                 alignment: Alignment.topCenter,
                                 child: TopTools(
-                                  txttitle: widget.txtTitle,
                                   contentKey: contentKey,
                                   context: context,
                                 )),
@@ -447,8 +443,7 @@ class _MainViewState extends State<MainView> {
     /// show close dialog
     else if (!controlNotifier.isTextEditing && !controlNotifier.isPainting) {
       return widget.onBackPress ??
-          exitDialog(
-              context: context, contentKey: contentKey, txttitle: " denene");
+          exitDialog(context: context, contentKey: contentKey);
     }
     return false;
   }
