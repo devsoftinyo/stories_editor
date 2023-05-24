@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:modal_gif_picker/modal_gif_picker.dart';
 import 'package:stories_editor/src/presentation/utils/constants/app_enums.dart';
 
@@ -17,7 +18,7 @@ class EditableItem {
   List<String> textList = [];
   Color textColor = Colors.transparent;
   TextAlign textAlign = TextAlign.center;
-  double fontSize = 20;
+  double fontSize = 20.sp;
   int fontFamily = 0;
   int fontAnimationIndex = 0;
   Color backGroundColor = Colors.transparent;

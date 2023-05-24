@@ -19,7 +19,7 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
     return Consumer2<ControlNotifier, PaintingNotifier>(
       builder: (context, controlNotifier, paintingNotifier, child) {
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h),
+          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h).r,
           child: Container(
             color: Colors.transparent,
             child: Row(
@@ -31,10 +31,10 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
                   ToolButton(
                     onTap: paintingNotifier.removeLast,
                     onLongPress: paintingNotifier.clearAll,
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    padding: const EdgeInsets.symmetric(horizontal: 5).r,
                     backGroundColor: Colors.black12,
                     child: Transform.scale(
-                        scale: 0.6,
+                        scale: 0.6.r,
                         child: const ImageIcon(
                           AssetImage('assets/icons/return.png',
                               package: 'stories_editor'),
@@ -50,13 +50,13 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
                   colorBorder: paintingNotifier.paintingType == PaintingType.pen
                       ? Colors.black
                       : Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5).r,
                   backGroundColor:
                       paintingNotifier.paintingType == PaintingType.pen
                           ? Colors.white.withOpacity(0.9)
                           : Colors.black12,
                   child: Transform.scale(
-                      scale: 1.2,
+                      scale: 1.2.r,
                       child: ImageIcon(
                         const AssetImage('assets/icons/pen.png',
                             package: 'stories_editor'),
@@ -75,7 +75,7 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
                       paintingNotifier.paintingType == PaintingType.marker
                           ? Colors.black
                           : Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5).r,
                   backGroundColor:
                       paintingNotifier.paintingType == PaintingType.marker
                           ? Colors.white.withOpacity(0.9)
@@ -101,13 +101,13 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
                       paintingNotifier.paintingType == PaintingType.neon
                           ? Colors.black
                           : Colors.white,
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5).r,
                   backGroundColor:
                       paintingNotifier.paintingType == PaintingType.neon
                           ? Colors.white.withOpacity(0.9)
                           : Colors.black12,
                   child: Transform.scale(
-                      scale: 1.1,
+                      scale: 1.1.r,
                       child: ImageIcon(
                         const AssetImage('assets/icons/neon.png',
                             package: 'stories_editor'),
@@ -127,7 +127,7 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
                   padding: const EdgeInsets.symmetric(horizontal: 5),
                   backGroundColor: Colors.black12,
                   child: Transform.scale(
-                      scale: 0.7,
+                      scale: 0.7.r,
                       child: const ImageIcon(
                         AssetImage('assets/icons/check.png',
                             package: 'stories_editor'),

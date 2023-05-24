@@ -45,12 +45,12 @@ class DraggableWidget extends StatelessWidget {
           child: IntrinsicHeight(
             child: Container(
               constraints: BoxConstraints(
-                minHeight: 50,
-                minWidth: 50,
+                minHeight: 50.h,
+                minWidth: 50.w,
                 maxWidth: screenUtil.screenWidth - 240.w,
               ),
-              width: draggableWidget.deletePosition ? 100 : null,
-              height: draggableWidget.deletePosition ? 100 : null,
+              width: draggableWidget.deletePosition ? 100.w : null,
+              height: draggableWidget.deletePosition ? 100.h : null,
               child: AnimatedOnTapButton(
                 onTap: () => _onTap(context, draggableWidget, _controlProvider),
                 child: Stack(
@@ -72,7 +72,7 @@ class DraggableWidget extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 2.5, top: 2),
+                      padding: const EdgeInsets.only(right: 2.5, top: 2).r,
                       child: Stack(
                         children: [
                           Center(
@@ -112,8 +112,8 @@ class DraggableWidget extends StatelessWidget {
 
       case ItemType.gif:
         overlayWidget = SizedBox(
-          width: 150,
-          height: 150,
+          width: 150.w,
+          height: 150.h,
           child: Stack(
             alignment: Alignment.center,
             children: [
@@ -121,9 +121,9 @@ class DraggableWidget extends StatelessWidget {
               Center(
                 child: Container(
                   alignment: Alignment.center,
-                  padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8).r,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(10).r,
                       color: Colors.transparent),
                   child: GiphyRenderImage.original(gif: draggableWidget.gif),
                 ),
@@ -238,7 +238,7 @@ class DraggableWidget extends StatelessWidget {
         color: background ? Colors.black : draggableWidget.textColor,
         fontSize: draggableWidget.deletePosition ? 8 : draggableWidget.fontSize,
         background: Paint()
-          ..strokeWidth = 20.0
+          ..strokeWidth = 20.0.w
           ..color = draggableWidget.backGroundColor
           ..style = paintingStyle
           ..strokeJoin = StrokeJoin.round
@@ -251,21 +251,21 @@ class DraggableWidget extends StatelessWidget {
     double top = 0.0;
     final ScreenUtil screenUtil = ScreenUtil();
     if (draggableWidget.type == ItemType.text) {
-      top = screenUtil.screenWidth / 1.2;
+      top = screenUtil.screenWidth / 1.2.w;
       return top;
     } else if (draggableWidget.type == ItemType.gif) {
-      top = screenUtil.screenWidth / 1.18;
+      top = screenUtil.screenWidth / 1.18.w;
       return top;
     }
   }
 
   _deleteScale() {
-    double scale = 0.0;
+    double scale = 0.0.r;
     if (draggableWidget.type == ItemType.text) {
-      scale = 0.4;
+      scale = 0.4.r;
       return scale;
     } else if (draggableWidget.type == ItemType.gif) {
-      scale = 0.3;
+      scale = 0.3.r;
       return scale;
     }
   }

@@ -26,6 +26,7 @@ import 'package:stories_editor/src/presentation/utils/constants/app_enums.dart';
 import 'package:stories_editor/src/presentation/utils/modal_sheets.dart';
 import 'package:stories_editor/src/presentation/widgets/animated_onTap_button.dart';
 import 'package:stories_editor/src/presentation/widgets/scrollable_pageView.dart';
+import 'package:stories_editor/stories_editor.dart';
 
 class MainView extends StatefulWidget {
   final Map langData = {};
@@ -91,8 +92,8 @@ class _MainViewState extends State<MainView> {
   /// Gesture Detector listen changes
   Offset _initPos = const Offset(0, 0);
   Offset _currentPos = const Offset(0, 0);
-  double _currentScale = 1;
-  double _currentRotation = 0;
+  double _currentScale = 1.r;
+  double _currentRotation = 0.r;
 
   /// delete position
   bool _isDeletePosition = false;
@@ -171,7 +172,7 @@ class _MainViewState extends State<MainView> {
                             child: Align(
                               alignment: Alignment.topCenter,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(25),
+                                borderRadius: BorderRadius.circular(25).r,
                                 child: SizedBox(
                                   width: screenUtil.screenWidth,
                                   child: RepaintBoundary(
@@ -250,7 +251,9 @@ class _MainViewState extends State<MainView> {
                                                   decoration: BoxDecoration(
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            25),
+                                                                25)
+                                                            .r
+                                                            .r,
                                                   ),
                                                   child: RepaintBoundary(
                                                     child: SizedBox(
@@ -295,17 +298,18 @@ class _MainViewState extends State<MainView> {
                               ignoring: true,
                               child: Align(
                                 alignment: const Alignment(0, -0.1),
-                                child: Text('Tap to type',
+                                child: Text(
+                                    langDataGlobal.dialog!.tapToType.toString(),
                                     style: TextStyle(
                                         fontFamily: 'Alegreya',
                                         package: 'stories_editor',
                                         fontWeight: FontWeight.w500,
-                                        fontSize: 30,
+                                        fontSize: 30.sp,
                                         color: Colors.white.withOpacity(0.5),
                                         shadows: <Shadow>[
                                           Shadow(
                                               offset: const Offset(1.0, 1.0),
-                                              blurRadius: 3.0,
+                                              blurRadius: 3.0.r,
                                               color: Colors.black45
                                                   .withOpacity(0.3))
                                         ])),
@@ -386,7 +390,7 @@ class _MainViewState extends State<MainView> {
                         curve: Curves.easeIn);
                   },
                   appBarLeadingWidget: Padding(
-                    padding: const EdgeInsets.only(bottom: 15, right: 15),
+                    padding: const EdgeInsets.only(bottom: 15, right: 15).r,
                     child: Align(
                       alignment: Alignment.bottomRight,
                       child: AnimatedOnTapButton(
@@ -397,19 +401,21 @@ class _MainViewState extends State<MainView> {
                         },
                         child: Container(
                           padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 2),
+                                  horizontal: 8, vertical: 2)
+                              .r
+                              .r,
                           decoration: BoxDecoration(
                               color: Colors.transparent,
-                              borderRadius: BorderRadius.circular(10),
+                              borderRadius: BorderRadius.circular(10).r,
                               border: Border.all(
                                 color: Colors.white,
-                                width: 1.2,
+                                width: 1.2.w,
                               )),
-                          child: const Text(
+                          child: Text(
                             'Cancel',
                             style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15,
+                                fontSize: 15.sp,
                                 fontWeight: FontWeight.w400),
                           ),
                         ),

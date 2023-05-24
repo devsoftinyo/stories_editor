@@ -7,6 +7,7 @@ import 'package:stories_editor/src/domain/providers/notifiers/draggable_widget_n
 import 'package:stories_editor/src/domain/providers/notifiers/scroll_notifier.dart';
 import 'package:stories_editor/src/domain/sevices/save_as_image.dart';
 import 'package:stories_editor/src/presentation/widgets/animated_onTap_button.dart';
+import 'package:stories_editor/stories_editor.dart';
 
 class BottomTools extends StatelessWidget {
   final GlobalKey contentKey;
@@ -30,7 +31,7 @@ class BottomTools extends StatelessWidget {
         return Container(
           decoration: const BoxDecoration(color: Colors.transparent),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 40.h),
+            padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 40).r,
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -44,7 +45,7 @@ class BottomTools extends StatelessWidget {
                         /// if [model.imagePath] is null/empty return preview image
                         child: controlNotifier.mediaPath.isEmpty
                             ? ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(8).r,
                                 child: GestureDetector(
                                   onTap: () {
                                     /// scroll to gridView page
@@ -69,11 +70,11 @@ class BottomTools extends StatelessWidget {
                                   itemNotifier.draggableWidget.removeAt(0);
                                 },
                                 child: Container(
-                                  height: 45,
-                                  width: 45,
+                                  height: 45.h,
+                                  width: 45.w,
                                   color: Colors.transparent,
                                   child: Transform.scale(
-                                    scale: 0.7,
+                                    scale: 0.7.r,
                                     child: const Icon(
                                       Icons.delete,
                                       color: Colors.white,
@@ -105,14 +106,14 @@ class BottomTools extends StatelessWidget {
                             'assets/images/instagram_logo.png',
                             package: 'stories_editor',
                             color: Colors.white,
-                            height: 42,
+                            height: 42.h,
                           ),
-                          const Text(
+                          Text(
                             'Stories Creator',
                             style: TextStyle(
                                 color: Colors.white38,
-                                letterSpacing: 1.5,
-                                fontSize: 9.2,
+                                letterSpacing: 1.5.r,
+                                fontSize: 9.2.sp,
                                 fontWeight: FontWeight.bold),
                           ),
                         ],
@@ -125,7 +126,7 @@ class BottomTools extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.centerRight,
                     child: Transform.scale(
-                      scale: 0.9,
+                      scale: 0.9.r,
                       child: AnimatedOnTapButton(
                           onTap: () async {
                             String pngUri;
@@ -143,28 +144,30 @@ class BottomTools extends StatelessWidget {
                           child: onDoneButtonStyle ??
                               Container(
                                 padding: const EdgeInsets.only(
-                                    left: 12, right: 5, top: 4, bottom: 4),
+                                        left: 12, right: 5, top: 4, bottom: 4)
+                                    .r,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(15),
+                                    borderRadius: BorderRadius.circular(15).r,
                                     border: Border.all(
-                                        color: Colors.white, width: 1.5)),
+                                        color: Colors.white, width: 1.5.w)),
                                 child: Row(
                                     mainAxisSize: MainAxisSize.min,
-                                    children: const [
+                                    children: [
                                       Text(
-                                        'Share',
+                                        langDataGlobal.dialog!.share.toString(),
                                         style: TextStyle(
                                             color: Colors.white,
-                                            letterSpacing: 1.5,
-                                            fontSize: 16,
+                                            letterSpacing: 1.5.r,
+                                            fontSize: 16.sp,
                                             fontWeight: FontWeight.w400),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.only(left: 5),
+                                        padding:
+                                            const EdgeInsets.only(left: 5).r,
                                         child: Icon(
                                           Icons.arrow_forward_ios,
                                           color: Colors.white,
-                                          size: 15,
+                                          size: 15.r,
                                         ),
                                       ),
                                     ]),
@@ -182,11 +185,11 @@ class BottomTools extends StatelessWidget {
 
   Widget _preViewContainer({child}) {
     return Container(
-      height: 45,
-      width: 45,
+      height: 45.h,
+      width: 45.w,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(width: 1.4, color: Colors.white)),
+          borderRadius: BorderRadius.circular(10).r,
+          border: Border.all(width: 1.4.w, color: Colors.white)),
       child: child,
     );
   }

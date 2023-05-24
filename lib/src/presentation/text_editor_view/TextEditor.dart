@@ -80,15 +80,15 @@ class _TextEditorState extends State<TextEditor> {
 
                         /// font family selector (bottom)
                         Positioned(
-                          bottom: screenUtil.screenHeight * 0.21,
+                          bottom: screenUtil.screenHeight.h * 0.21.h,
                           child: Visibility(
                             visible: editorNotifier.isFontFamily &&
                                 !editorNotifier.isTextAnimation,
-                            child: const Align(
+                            child: Align(
                               alignment: Alignment.bottomCenter,
                               child: Padding(
-                                padding: EdgeInsets.only(bottom: 20),
-                                child: FontSelector(),
+                                padding: const EdgeInsets.only(bottom: 20).r,
+                                child: const FontSelector(),
                               ),
                             ),
                           ),
@@ -96,14 +96,14 @@ class _TextEditorState extends State<TextEditor> {
 
                         /// font color selector (bottom)
                         Positioned(
-                          bottom: screenUtil.screenHeight * 0.21,
+                          bottom: screenUtil.screenHeight.h * 0.21.h,
                           child: Visibility(
                               visible: !editorNotifier.isFontFamily &&
                                   !editorNotifier.isTextAnimation,
-                              child: const Align(
+                              child: Align(
                                 alignment: Alignment.bottomCenter,
                                 child: Padding(
-                                  padding: EdgeInsets.only(bottom: 20),
+                                  padding: const EdgeInsets.only(bottom: 20).r,
                                   child: ColorSelector(),
                                 ),
                               )),

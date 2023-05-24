@@ -28,9 +28,9 @@ class _SizeSliderWidgetState extends State<SizeSliderWidget> {
             /// custom paint
             AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
-                padding: EdgeInsets.only(right: _isChange ? 0 : 15),
+                padding: EdgeInsets.only(right: _isChange ? 0 : 15).r,
                 width: _isChange ? 39 : 10,
-                height: 300,
+                height: 300.h,
                 child: CustomPaint(
                   painter: RPSCustomPainter(),
                   size: Size(screenUtil.screenHeight,
@@ -39,10 +39,10 @@ class _SizeSliderWidgetState extends State<SizeSliderWidget> {
 
             /// slider decoration with animations
             AnimatedContainer(
-              padding: EdgeInsets.only(left: _isChange ? 1 : 1, right: 2.1),
+              padding: EdgeInsets.only(left: _isChange ? 1 : 1, right: 2.1).r,
               duration: const Duration(milliseconds: 300),
-              width: _isChange ? 39 : 15,
-              height: 300,
+              width: _isChange ? 39.w : 15.w,
+              height: 300.h,
               decoration: const BoxDecoration(),
               child: RotatedBox(
                 quarterTurns: 3,
@@ -51,8 +51,8 @@ class _SizeSliderWidgetState extends State<SizeSliderWidget> {
                   children: [
                     AnimatedContainer(
                       duration: const Duration(milliseconds: 300),
-                      width: 250,
-                      height: !_showIndicator ? 2 : 0,
+                      width: 250.w,
+                      height: !_showIndicator ? 2.h : 0.h,
                       decoration: BoxDecoration(
                           color: !_showIndicator
                               ? Colors.white.withOpacity(0.2)
@@ -61,7 +61,7 @@ class _SizeSliderWidgetState extends State<SizeSliderWidget> {
                     ),
                     Padding(
                       padding: _isChange
-                          ? const EdgeInsets.only(top: 2)
+                          ? const EdgeInsets.only(top: 2).r
                           : const EdgeInsets.all(0),
                       child: Slider(
                         value: controlNotifier.isPainting

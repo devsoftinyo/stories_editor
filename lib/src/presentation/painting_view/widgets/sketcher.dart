@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:perfect_freehand/perfect_freehand.dart';
 import 'package:stories_editor/src/domain/models/painting_model.dart';
 import 'package:stories_editor/src/presentation/utils/constants/app_enums.dart';
@@ -24,7 +25,7 @@ class Sketcher extends CustomPainter {
               lines[i].points,
 
               /// line width
-              size: lines[i].size,
+              size: lines[i].size.r,
 
               /// line thin
               thinning: 1,
@@ -43,7 +44,7 @@ class Sketcher extends CustomPainter {
           break;
         case PaintingType.marker:
           paint = Paint()
-            ..strokeWidth = 5
+            ..strokeWidth = 5.w
             ..color = lines[i].lineColor.withOpacity(0.7)
             ..maskFilter = const MaskFilter.blur(BlurStyle.solid, 5)
             ..strokeCap = StrokeCap.square

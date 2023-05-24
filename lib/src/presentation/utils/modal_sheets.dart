@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:modal_gif_picker/modal_gif_picker.dart';
 import 'package:provider/provider.dart';
@@ -51,38 +52,39 @@ Future<bool> exitDialog({required context, required contentKey}) async {
           insetAnimationCurve: Curves.ease,
           child: Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(24),
+              borderRadius: BorderRadius.circular(24).r,
               color: HexColor.fromHex('#262626'),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 5),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 25, horizontal: 5).r,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
                   Text(
                     langDataGlobal.dialog!.title.toString(),
                     textAlign: TextAlign.center,
-                    style: const TextStyle(
-                        fontSize: 22,
+                    style: TextStyle(
+                        fontSize: 22.sp,
                         fontWeight: FontWeight.w600,
                         color: Colors.white,
-                        letterSpacing: 0.5),
+                        letterSpacing: 0.5.r),
                   ),
-                  const SizedBox(
-                    height: 20,
+                  SizedBox(
+                    height: 20.h,
                   ),
                   Text(
                     langDataGlobal.dialog!.body.toString(),
-                    style: const TextStyle(
-                        fontSize: 15,
+                    style: TextStyle(
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.w400,
                         color: Colors.white54,
-                        letterSpacing: 0.1),
+                        letterSpacing: 0.1.w),
                     textAlign: TextAlign.center,
                     maxLines: 3,
                   ),
-                  const SizedBox(
-                    height: 40,
+                  SizedBox(
+                    height: 40.h,
                   ),
 
                   /// Sil Butonu,basıldığında kaydetmeden çıkar
@@ -94,10 +96,10 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     child: Text(
                       langDataGlobal.dialog!.delete.toString(),
                       style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           color: Colors.redAccent.shade200,
                           fontWeight: FontWeight.bold,
-                          letterSpacing: 0.1),
+                          letterSpacing: 0.1.r),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -145,9 +147,9 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   //     textAlign: TextAlign.center,
                   //   ),
                   // ),
-                  const SizedBox(
-                    height: 22,
-                    child: Divider(
+                  SizedBox(
+                    height: 22.h,
+                    child: const Divider(
                       color: Colors.white10,
                     ),
                   ),
@@ -159,11 +161,11 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                     },
                     child: Text(
                       langDataGlobal.dialog!.quit.toString(),
-                      style: const TextStyle(
-                          fontSize: 16,
+                      style: TextStyle(
+                          fontSize: 16.sp,
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          letterSpacing: 0.5),
+                          letterSpacing: 0.5.w),
                       textAlign: TextAlign.center,
                     ),
                   ),

@@ -40,13 +40,13 @@ class DeleteItem extends StatelessWidget {
                 children: [
                   Container(
                     width: 90.w,
-                    height: 90.w,
+                    height: 90.h,
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                     ),
                     child: deletedItem == null
                         ? Transform.scale(
-                            scale: 1,
+                            scale: 1.r,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(360),
                               child: deletedItem,
@@ -57,18 +57,18 @@ class DeleteItem extends StatelessWidget {
                   AnimatedContainer(
                     alignment: Alignment.center,
                     duration: animationsDuration,
-                    height: isDeletePosition ? 55.0 : 45,
-                    width: isDeletePosition ? 55.0 : 45,
+                    height: isDeletePosition ? 55.0 : 45.h,
+                    width: isDeletePosition ? 55.0 : 45.w,
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.35),
                       border: Border.all(color: Colors.white),
-                      borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.circular(50).r,
                     ),
-                    child: const ImageIcon(
-                      AssetImage('assets/icons/trash.png',
+                    child: ImageIcon(
+                      const AssetImage('assets/icons/trash.png',
                           package: 'stories_editor'),
                       color: Colors.white,
-                      size: 23,
+                      size: 23.r,
                     ),
                   ),
                 ],

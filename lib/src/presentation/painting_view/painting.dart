@@ -58,11 +58,13 @@ class _PaintingState extends State<Painting> {
       if (point.y >= 4 &&
           point.y <=
               (Platform.isIOS
-                  ? (screenSize.size.height - 132) - screenSize.viewPadding.top
-                  : screenSize.size.height - 132)) {
+                      ? (screenSize.size.height - 132).h -
+                          screenSize.viewPadding.top.r
+                      : screenSize.size.height - 132)
+                  .h) {
         line = PaintingModel(
             points,
-            paintingNotifier.lineWidth,
+            paintingNotifier.lineWidth.w,
             1,
             1,
             false,
@@ -85,8 +87,9 @@ class _PaintingState extends State<Painting> {
       if (point.y >= 6 &&
           point.y <=
               (Platform.isIOS
-                  ? (screenSize.size.height - 132) - screenSize.viewPadding.top
-                  : screenSize.size.height - 132)) {
+                  ? (screenSize.size.height.h - 132.h) -
+                      screenSize.viewPadding.top
+                  : screenSize.size.height.h - 132.h)) {
         line = PaintingModel(
             points,
             paintingNotifier.lineWidth,
@@ -127,13 +130,13 @@ class _PaintingState extends State<Painting> {
               alignment: Alignment.topCenter,
               child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
+                    borderRadius: BorderRadius.circular(25).r,
                   ),
                   width: MediaQuery.of(context).size.width,
                   height: Platform.isIOS
-                      ? (screenSize.size.height - 132) -
+                      ? (screenSize.size.height - 132).h -
                           screenSize.viewPadding.top
-                      : MediaQuery.of(context).size.height - 132,
+                      : MediaQuery.of(context).size.height.h - 132.h,
                   child: StreamBuilder<PaintingModel>(
                       stream:
                           paintingNotifier.currentLineStreamController.stream,
@@ -169,10 +172,10 @@ class _PaintingState extends State<Painting> {
                 _renderCurrentLine(context, paintingNotifier, controlNotifier),
 
                 /// select line width
-                const Align(
+                Align(
                   alignment: Alignment.centerLeft,
                   child: Padding(
-                    padding: EdgeInsets.only(bottom: 140),
+                    padding: const EdgeInsets.only(bottom: 140).r,
                     child: SizeSliderWidget(),
                   ),
                 ),
@@ -185,7 +188,8 @@ class _PaintingState extends State<Painting> {
                   alignment: Alignment.bottomCenter,
                   child: Padding(
                     padding:
-                        EdgeInsets.symmetric(vertical: 30.h, horizontal: 30.w),
+                        const EdgeInsets.symmetric(vertical: 30, horizontal: 30)
+                            .r,
                     child: const ColorSelector(),
                   ),
                 ),

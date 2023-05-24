@@ -65,11 +65,11 @@ class _TopToolsState extends State<TopTools> {
                         }
                       }),
                 ToolButton(
-                    child: const ImageIcon(
-                      AssetImage('assets/icons/download.png',
+                    child: ImageIcon(
+                      const AssetImage('assets/icons/download.png',
                           package: 'stories_editor'),
                       color: Colors.white,
-                      size: 20,
+                      size: 20.r,
                     ),
                     backGroundColor: Colors.black12,
                     onTap: () async {
@@ -87,21 +87,21 @@ class _TopToolsState extends State<TopTools> {
                       }
                     }),
                 ToolButton(
-                    child: const ImageIcon(
-                      AssetImage('assets/icons/stickers.png',
+                    child: ImageIcon(
+                      const AssetImage('assets/icons/stickers.png',
                           package: 'stories_editor'),
                       color: Colors.white,
-                      size: 20,
+                      size: 20.r,
                     ),
                     backGroundColor: Colors.black12,
                     onTap: () => createGiphyItem(
                         context: context, giphyKey: controlNotifier.giphyKey)),
                 ToolButton(
-                    child: const ImageIcon(
-                      AssetImage('assets/icons/draw.png',
+                    child: ImageIcon(
+                      const AssetImage('assets/icons/draw.png',
                           package: 'stories_editor'),
                       color: Colors.white,
-                      size: 20,
+                      size: 20.r,
                     ),
                     backGroundColor: Colors.black12,
                     onTap: () {
@@ -120,11 +120,11 @@ class _TopToolsState extends State<TopTools> {
                 //   !controlNotifier.isPhotoFilter,
                 // ),
                 ToolButton(
-                  child: const ImageIcon(
-                    AssetImage('assets/icons/text.png',
+                  child: ImageIcon(
+                    const AssetImage('assets/icons/text.png',
                         package: 'stories_editor'),
                     color: Colors.white,
-                    size: 20,
+                    size: 20.r,
                   ),
                   backGroundColor: Colors.black12,
                   onTap: () => controlNotifier.isTextEditing =
@@ -141,18 +141,18 @@ class _TopToolsState extends State<TopTools> {
   /// gradient color selector
   Widget _selectColor({onTap, controlProvider}) {
     return Padding(
-      padding: const EdgeInsets.only(left: 5, right: 5, top: 8),
+      padding: const EdgeInsets.only(left: 5, right: 5, top: 8).r,
       child: AnimatedOnTapButton(
         onTap: onTap,
         child: Container(
-          padding: const EdgeInsets.all(2),
+          padding: const EdgeInsets.all(2).r,
           decoration: const BoxDecoration(
             color: Colors.white,
             shape: BoxShape.circle,
           ),
           child: Container(
-            width: 30,
-            height: 30,
+            width: 30.w,
+            height: 30.h,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topLeft,
