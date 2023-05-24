@@ -28,6 +28,8 @@ import 'package:stories_editor/src/presentation/widgets/animated_onTap_button.da
 import 'package:stories_editor/src/presentation/widgets/scrollable_pageView.dart';
 
 class MainView extends StatefulWidget {
+  final Map langData = {};
+
   /// editor custom font families
   final List<String>? fontFamilyList;
 
