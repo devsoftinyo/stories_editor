@@ -1,5 +1,7 @@
 // ignore_for_file: must_be_immutable
 
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -517,6 +519,8 @@ class _MainViewState extends State<MainView> {
         Provider.of<DraggableWidgetNotifier>(context, listen: false)
             .draggableWidget;
     _inAction = false;
+    print("Item bırakıldı > X: ${item.position.dx} | Y:${item.position.dy}");
+    log("Item bırakıldı > X: ${item.position.dx} | Y:${item.position.dy}");
     if (item.type == ItemType.image) {
     } else if (item.type == ItemType.text &&
             item.position.dy >= 0.75.h &&
