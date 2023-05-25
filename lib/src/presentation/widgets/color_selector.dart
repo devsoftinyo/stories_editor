@@ -19,7 +19,7 @@ class ColorSelector extends StatelessWidget {
           height: screenUtil.screenWidth * 0.1.h,
           width: screenUtil.screenWidth,
           alignment: Alignment.center,
-          padding: const EdgeInsets.only(left: 5, right: 5).r,
+          padding: const EdgeInsets.only(left: 5, right: 9).r,
           child: Row(
             children: [
               /// current selected color
@@ -67,7 +67,7 @@ class ColorSelector extends StatelessWidget {
                             }
                           },
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 5.w),
+                            padding: EdgeInsets.symmetric(horizontal: 3.w),
                             child: Container(
                               height: 50.h,
                               width: 50.w,
