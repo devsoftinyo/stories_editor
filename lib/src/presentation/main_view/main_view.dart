@@ -491,7 +491,7 @@ class _MainViewState extends State<MainView> {
   void _deletePosition(EditableItem item, PointerMoveEvent details) {
     if (item.type == ItemType.text &&
         item.position.dy >= 0.75 &&
-        item.position.dx >= -0.4 &&
+        item.position.dx >= -0.2 &&
         item.position.dx <= 0.2) {
       setState(() {
         _isDeletePosition = true;
@@ -499,7 +499,7 @@ class _MainViewState extends State<MainView> {
       });
     } else if (item.type == ItemType.gif &&
         item.position.dy >= 0.23 &&
-        item.position.dx >= -0.35 &&
+        item.position.dx >= -0.15 &&
         item.position.dx <= 0.15) {
       setState(() {
         _isDeletePosition = true;
@@ -524,11 +524,11 @@ class _MainViewState extends State<MainView> {
     if (item.type == ItemType.image) {
     } else if (item.type == ItemType.text &&
             item.position.dy >= 0.75 &&
-            item.position.dx >= -0.4 &&
+            item.position.dx >= -0.2 &&
             item.position.dx <= 0.2 ||
         item.type == ItemType.gif &&
             item.position.dy >= 0.23 &&
-            item.position.dx >= -0.35 &&
+            item.position.dx >= -0.15 &&
             item.position.dx <= 0.15) {
       setState(() {
         _itemProvider.removeAt(_itemProvider.indexOf(item));

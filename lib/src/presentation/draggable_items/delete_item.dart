@@ -56,8 +56,8 @@ class DeleteItem extends StatelessWidget {
                   AnimatedContainer(
                     alignment: Alignment.center,
                     duration: animationsDuration,
-                    height: isDeletePosition ? 55.0 : 45.h,
-                    width: isDeletePosition ? 55.0 : 45.w,
+                    height: isDeletePosition ? 55.0.h : 45.h,
+                    width: isDeletePosition ? 55.0.w : 45.w,
                     decoration: BoxDecoration(
                       color: Colors.black.withOpacity(0.35),
                       border: Border.all(color: Colors.white),
