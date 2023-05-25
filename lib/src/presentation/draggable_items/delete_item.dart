@@ -21,9 +21,8 @@ class DeleteItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ScreenUtil screenUtil = ScreenUtil();
-
     return Positioned(
-        bottom: MediaQuery.of(context).size.width / 2,
+        bottom: 40,
         right: 0,
         left: 0,
         child: AnimatedScale(
@@ -33,7 +32,7 @@ class DeleteItem extends StatelessWidget {
               ? 1.0
               : 0.0,
           child: SizedBox(
-            width: screenUtil.screenWidth.w - 40.w, //// Bi bak
+            width: screenUtil.screenWidth - 50,
             child: Center(
               child: Stack(
                 alignment: Alignment.center,
@@ -42,7 +41,8 @@ class DeleteItem extends StatelessWidget {
                     width: 90.w,
                     height: 90.h,
                     decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.amber),
+                      shape: BoxShape.circle,
+                    ),
                     child: deletedItem == null
                         ? Transform.scale(
                             scale: 1,

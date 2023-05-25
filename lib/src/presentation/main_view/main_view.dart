@@ -367,63 +367,62 @@ class _MainViewState extends State<MainView> {
                       ),
                   ],
                 ),
-                gallery: Text("deneme"),
-                // gallery: GalleryMediaPicker(
-                //   gridViewController: scrollProvider.gridController,
-                //   thumbnailQuality: widget.galleryThumbnailQuality,
-                //   singlePick: true,
-                //   onlyImages: true,
-                //   appBarColor: widget.editorBackgroundColor ?? Colors.black,
-                //   gridViewPhysics: itemProvider.draggableWidget.isEmpty
-                //       ? const NeverScrollableScrollPhysics()
-                //       : const ScrollPhysics(),
-                //   pathList: (path) {
-                //     controlNotifier.mediaPath = path.first.path!.toString();
-                //     if (controlNotifier.mediaPath.isNotEmpty) {
-                //       itemProvider.draggableWidget.insert(
-                //           0,
-                //           EditableItem()
-                //             ..type = ItemType.image
-                //             ..position = const Offset(0.0, 0));
-                //     }
-                //     scrollProvider.pageController.animateToPage(0,
-                //         duration: const Duration(milliseconds: 300),
-                //         curve: Curves.easeIn);
-                //   },
-                //   appBarLeadingWidget: Padding(
-                //     padding: const EdgeInsets.only(bottom: 15, right: 15).r,
-                //     child: Align(
-                //       alignment: Alignment.bottomRight,
-                //       child: AnimatedOnTapButton(
-                //         onTap: () {
-                //           scrollProvider.pageController.animateToPage(0,
-                //               duration: const Duration(milliseconds: 300),
-                //               curve: Curves.easeIn);
-                //         },
-                //         child: Container(
-                //           padding: const EdgeInsets.symmetric(
-                //                   horizontal: 8, vertical: 2)
-                //               .r
-                //               .r,
-                //           decoration: BoxDecoration(
-                //               color: Colors.transparent,
-                //               borderRadius: BorderRadius.circular(10).r,
-                //               border: Border.all(
-                //                 color: Colors.white,
-                //                 width: 1.2.w,
-                //               )),
-                //           child: Text(
-                //             'Cancel',
-                //             style: TextStyle(
-                //                 color: Colors.white,
-                //                 fontSize: 15.sp,
-                //                 fontWeight: FontWeight.w400),
-                //           ),
-                //         ),
-                //       ),
-                //     ),
-                //   ),
-                // ),
+                gallery: GalleryMediaPicker(
+                  gridViewController: scrollProvider.gridController,
+                  thumbnailQuality: widget.galleryThumbnailQuality,
+                  singlePick: true,
+                  onlyImages: true,
+                  appBarColor: widget.editorBackgroundColor ?? Colors.black,
+                  gridViewPhysics: itemProvider.draggableWidget.isEmpty
+                      ? const NeverScrollableScrollPhysics()
+                      : const ScrollPhysics(),
+                  pathList: (path) {
+                    controlNotifier.mediaPath = path.first.path!.toString();
+                    if (controlNotifier.mediaPath.isNotEmpty) {
+                      itemProvider.draggableWidget.insert(
+                          0,
+                          EditableItem()
+                            ..type = ItemType.image
+                            ..position = const Offset(0.0, 0));
+                    }
+                    scrollProvider.pageController.animateToPage(0,
+                        duration: const Duration(milliseconds: 300),
+                        curve: Curves.easeIn);
+                  },
+                  appBarLeadingWidget: Padding(
+                    padding: const EdgeInsets.only(bottom: 15, right: 15).r,
+                    child: Align(
+                      alignment: Alignment.bottomRight,
+                      child: AnimatedOnTapButton(
+                        onTap: () {
+                          scrollProvider.pageController.animateToPage(0,
+                              duration: const Duration(milliseconds: 300),
+                              curve: Curves.easeIn);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 2)
+                              .r
+                              .r,
+                          decoration: BoxDecoration(
+                              color: Colors.transparent,
+                              borderRadius: BorderRadius.circular(10).r,
+                              border: Border.all(
+                                color: Colors.white,
+                                width: 1.2.w,
+                              )),
+                          child: Text(
+                            'Cancel',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 15.sp,
+                                fontWeight: FontWeight.w400),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
               ),
             );
           },
