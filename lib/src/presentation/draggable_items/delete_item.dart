@@ -32,7 +32,7 @@ class DeleteItem extends StatelessWidget {
               ? 1.0
               : 0.0,
           child: SizedBox(
-            width: screenUtil.screenWidth - 50,
+            width: screenUtil.screenWidth - 150,
             child: Center(
               child: Stack(
                 alignment: Alignment.center,
