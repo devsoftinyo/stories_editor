@@ -51,39 +51,43 @@ class DraggableWidget extends StatelessWidget {
               ),
               width: draggableWidget.deletePosition ? 100.w : null,
               height: draggableWidget.deletePosition ? 100.h : null,
-              child: AnimatedOnTapButton(
-                onTap: () => _onTap(context, draggableWidget, _controlProvider),
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Center(
-                      child: _text(
-                          background: true,
-                          paintingStyle: PaintingStyle.fill,
-                          controlNotifier: _controlProvider),
-                    ),
-                    IgnorePointer(
-                      ignoring: true,
-                      child: Center(
+              child: Opacity(
+                opacity: draggableWidget.deletePosition ? .5 : 1,
+                child: AnimatedOnTapButton(
+                  onTap: () =>
+                      _onTap(context, draggableWidget, _controlProvider),
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Center(
                         child: _text(
                             background: true,
-                            paintingStyle: PaintingStyle.stroke,
+                            paintingStyle: PaintingStyle.fill,
                             controlNotifier: _controlProvider),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(right: 2.5, top: 2).r,
-                      child: Stack(
-                        children: [
-                          Center(
-                            child: _text(
-                                paintingStyle: PaintingStyle.fill,
-                                controlNotifier: _controlProvider),
-                          ),
-                        ],
+                      IgnorePointer(
+                        ignoring: true,
+                        child: Center(
+                          child: _text(
+                              background: true,
+                              paintingStyle: PaintingStyle.stroke,
+                              controlNotifier: _controlProvider),
+                        ),
                       ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(right: 2.5, top: 2).r,
+                        child: Stack(
+                          children: [
+                            Center(
+                              child: _text(
+                                  paintingStyle: PaintingStyle.fill,
+                                  controlNotifier: _controlProvider),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -260,12 +264,12 @@ class DraggableWidget extends StatelessWidget {
   }
 
   _deleteScale() {
-    double scale = 0.0.r;
+    double scale = 0.0;
     if (draggableWidget.type == ItemType.text) {
-      scale = 0.4.r;
+      scale = 0.4;
       return scale;
     } else if (draggableWidget.type == ItemType.gif) {
-      scale = 0.3.r;
+      scale = 0.3;
       return scale;
     }
   }
