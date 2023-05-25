@@ -490,16 +490,16 @@ class _MainViewState extends State<MainView> {
   /// active delete widget with offset position
   void _deletePosition(EditableItem item, PointerMoveEvent details) {
     if (item.type == ItemType.text &&
-        item.position.dy >= 0.75.h &&
-        item.position.dx >= -0.4.w &&
-        item.position.dx <= 0.2.w) {
+        item.position.dy >= 0.75 &&
+        item.position.dx >= -0.4 &&
+        item.position.dx <= 0.2) {
       setState(() {
         _isDeletePosition = true;
         item.deletePosition = true;
       });
     } else if (item.type == ItemType.gif &&
-        item.position.dy >= 0.62.h &&
-        item.position.dx >= -0.35.w &&
+        item.position.dy >= 0.23 &&
+        item.position.dx >= -0.35 &&
         item.position.dx <= 0.15) {
       setState(() {
         _isDeletePosition = true;
@@ -523,12 +523,12 @@ class _MainViewState extends State<MainView> {
     log("Item bırakıldı > X: ${item.position.dx} | Y:${item.position.dy}");
     if (item.type == ItemType.image) {
     } else if (item.type == ItemType.text &&
-            item.position.dy >= 0.75.h &&
-            item.position.dx >= -0.4.w &&
-            item.position.dx <= 0.2.w ||
+            item.position.dy >= 0.75 &&
+            item.position.dx >= -0.4 &&
+            item.position.dx <= 0.2 ||
         item.type == ItemType.gif &&
-            item.position.dy >= 0.62.h &&
-            item.position.dx >= -0.35.w &&
+            item.position.dy >= 0.23 &&
+            item.position.dx >= -0.35 &&
             item.position.dx <= 0.15) {
       setState(() {
         _itemProvider.removeAt(_itemProvider.indexOf(item));
