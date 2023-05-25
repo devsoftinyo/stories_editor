@@ -123,37 +123,35 @@ class TopTextTools extends StatelessWidget {
                             ),
                           ),
                         )),
-                  )
-                ],
-              ),
+                  ),
 
-              /// close and create item
-              GestureDetector(
-                onTap: onDone,
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 10, top: 10).r,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                              vertical: 6, horizontal: 12)
-                          .r
-                          .r,
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          border: Border.all(color: Colors.white, width: 1.5.w),
-                          borderRadius: BorderRadius.circular(15)),
-                      child: Text(
-                        langDataGlobal.dialog!.done.toString(),
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15.sp,
-                          fontWeight: FontWeight.w500,
+                  /// close and create items
+                  GestureDetector(
+                    onTap: onDone,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 10, left: 10).r,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                                vertical: 6, horizontal: 12)
+                            .r
+                            .r,
+                        decoration: BoxDecoration(
+                            color: Colors.transparent,
+                            border:
+                                Border.all(color: Colors.white, width: 1.5.w),
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Text(
+                          langDataGlobal.dialog!.done.toString(),
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
