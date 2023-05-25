@@ -67,16 +67,16 @@ class ColorSelector extends StatelessWidget {
                             }
                           },
                           child: Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 2.w),
+                            padding: EdgeInsets.symmetric(horizontal: 10.w),
                             child: Container(
-                              height: 20.h,
-                              width: 20.w,
+                              height: 50.h,
+                              width: 50.w,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: controlProvider.colorList![index],
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                      color: Colors.amber, width: 1.5.w)),
+                                      color: Colors.white, width: 1.5.w)),
                             ),
                           ),
                         );
