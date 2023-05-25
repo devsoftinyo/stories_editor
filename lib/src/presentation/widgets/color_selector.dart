@@ -69,8 +69,8 @@ class ColorSelector extends StatelessWidget {
                           child: Padding(
                             padding: EdgeInsets.symmetric(horizontal: 2.w),
                             child: Container(
-                              height: 100.h,
-                              width: 100.w,
+                              height: 20.h,
+                              width: 20.w,
                               alignment: Alignment.center,
                               decoration: BoxDecoration(
                                   color: controlProvider.colorList![index],
