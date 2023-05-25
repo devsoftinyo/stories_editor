@@ -16,11 +16,12 @@ class ColorSelector extends StatelessWidget {
       builder:
           (context, controlProvider, editorProvider, paintingProvider, child) {
         return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             /// current selected color
             Container(
               height: 120.h,
-              //width: 120.w,
+              width: 120.w,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: controlProvider.isPainting
