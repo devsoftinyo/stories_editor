@@ -124,7 +124,7 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
                     controlNotifier.isPainting = !controlNotifier.isPainting;
                     paintingNotifier.resetDefaults();
                   },
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5).r,
                   backGroundColor: Colors.black12,
                   child: Transform.scale(
                       scale: 0.7.r,
