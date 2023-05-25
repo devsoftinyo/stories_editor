@@ -140,12 +140,10 @@ class DraggableWidget extends StatelessWidget {
     /// set widget data position on main screen
     return AnimatedAlignPositioned(
       duration: const Duration(milliseconds: 50),
-      dy: (draggableWidget.deletePosition
+      dy: (false
           ? _deleteTopOffset()
           : (draggableWidget.position.dy * screenUtil.screenHeight)),
-      dx: (draggableWidget.deletePosition
-          ? 0
-          : (draggableWidget.position.dx * screenUtil.screenWidth)),
+      dx: (false ? 0 : (draggableWidget.position.dx * screenUtil.screenWidth)),
       alignment: Alignment.center,
       child: Transform.scale(
         scale: draggableWidget.deletePosition
@@ -159,7 +157,9 @@ class DraggableWidget extends StatelessWidget {
             onPointerMove: onPointerMove,
 
             /// show widget
-            child: overlayWidget,
+            child: Opacity(
+                opacity: draggableWidget.deletePosition ? .5 : 1,
+                child: overlayWidget),
           ),
         ),
       ),

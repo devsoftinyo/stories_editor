@@ -523,7 +523,7 @@ class _MainViewState extends State<MainView> {
     log("Item bırakıldı > X: ${item.position.dx} | Y:${item.position.dy}");
     if (item.type == ItemType.image) {
     } else if (item.type == ItemType.text &&
-            item.position.dy >= 0.75 &&
+            item.position.dy >= 0.25 &&
             item.position.dx >= -0.2 &&
             item.position.dx <= 0.2 ||
         item.type == ItemType.gif &&
