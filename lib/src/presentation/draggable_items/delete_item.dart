@@ -22,7 +22,7 @@ class DeleteItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final ScreenUtil screenUtil = ScreenUtil();
     return Positioned(
-        bottom: 40,
+        bottom: 40.h,
         right: 0,
         left: 0,
         child: AnimatedScale(
@@ -47,7 +47,7 @@ class DeleteItem extends StatelessWidget {
                         ? Transform.scale(
                             scale: 1,
                             child: ClipRRect(
-                              borderRadius: BorderRadius.circular(360),
+                              borderRadius: BorderRadius.circular(360).r,
                               child: deletedItem,
                             ),
                           )

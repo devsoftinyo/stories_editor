@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:stories_editor/src/domain/providers/notifiers/text_editing_notifier.dart';
 import 'package:stories_editor/src/presentation/widgets/tool_button.dart';
@@ -13,7 +14,7 @@ class TopTextTools extends StatelessWidget {
     return Consumer<TextEditingNotifier>(
       builder: (context, editorNotifier, child) {
         return Container(
-          padding: const EdgeInsets.only(top: 15),
+          padding: const EdgeInsets.only(top: 15).r,
           child: Stack(
             alignment: Alignment.topCenter,
             children: [
@@ -38,10 +39,10 @@ class TopTextTools extends StatelessWidget {
                     child: Transform.scale(
                         scale: !editorNotifier.isFontFamily ? 0.8 : 1.3,
                         child: !editorNotifier.isFontFamily
-                            ? const ImageIcon(
-                                AssetImage('assets/icons/text.png',
+                            ? ImageIcon(
+                                const AssetImage('assets/icons/text.png',
                                     package: 'stories_editor'),
-                                size: 20,
+                                size: 20.r,
                                 color: Colors.white,
                               )
                             : Image.asset(
@@ -70,10 +71,11 @@ class TopTextTools extends StatelessWidget {
                     onTap: editorNotifier.onBackGroundChange,
                     child: Transform.scale(
                         scale: 0.7,
-                        child: const Center(
+                        child: Center(
                           child: Padding(
-                            padding: EdgeInsets.only(left: 5, bottom: 3),
-                            child: ImageIcon(
+                            padding:
+                                const EdgeInsets.only(left: 5, bottom: 3).r,
+                            child: const ImageIcon(
                               AssetImage('assets/icons/font_backGround.png',
                                   package: 'stories_editor'),
                               color: Colors.white,
@@ -131,19 +133,21 @@ class TopTextTools extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Padding(
-                    padding: const EdgeInsets.only(right: 10, top: 10),
+                    padding: const EdgeInsets.only(right: 10, top: 10).r,
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                          vertical: 6, horizontal: 12),
+                              vertical: 6, horizontal: 12)
+                          .r
+                          .r,
                       decoration: BoxDecoration(
                           color: Colors.transparent,
-                          border: Border.all(color: Colors.white, width: 1.5),
+                          border: Border.all(color: Colors.white, width: 1.5.w),
                           borderRadius: BorderRadius.circular(15)),
                       child: Text(
                         langDataGlobal.dialog!.done.toString(),
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.w500,
                         ),
                       ),

@@ -254,7 +254,6 @@ class _MainViewState extends State<MainView> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                                 25)
-                                                            .r
                                                             .r,
                                                   ),
                                                   child: RepaintBoundary(
@@ -311,7 +310,7 @@ class _MainViewState extends State<MainView> {
                                         shadows: <Shadow>[
                                           Shadow(
                                               offset: const Offset(1.0, 1.0),
-                                              blurRadius: 3.0.r,
+                                              blurRadius: 3.0,
                                               color: Colors.black45
                                                   .withOpacity(0.3))
                                         ])),
@@ -404,7 +403,6 @@ class _MainViewState extends State<MainView> {
                         child: Container(
                           padding: const EdgeInsets.symmetric(
                                   horizontal: 8, vertical: 2)
-                              .r
                               .r,
                           decoration: BoxDecoration(
                               color: Colors.transparent,

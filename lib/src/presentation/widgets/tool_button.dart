@@ -22,7 +22,7 @@ class ToolButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.only(top: 8).r,
       child: AnimatedOnTapButton(
         onTap: onTap,
         onLongPress: onLongPress,
@@ -30,7 +30,7 @@ class ToolButton extends StatelessWidget {
           padding: padding ?? const EdgeInsets.symmetric(horizontal: 10).r,
           child: Material(
             color: Colors.transparent,
-            borderRadius: BorderRadius.circular(90),
+            borderRadius: BorderRadius.circular(90).r,
             elevation: 1,
             shadowColor: Colors.black.withOpacity(0.5),
             child: Container(
@@ -41,7 +41,7 @@ class ToolButton extends StatelessWidget {
                   shape: BoxShape.circle,
                   border: Border.all(color: colorBorder, width: 2.w)),
               child: Transform.scale(
-                scale: 0.8.r,
+                scale: 0.8,
                 child: child,
               ),
             ),

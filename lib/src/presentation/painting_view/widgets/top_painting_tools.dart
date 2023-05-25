@@ -19,7 +19,7 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
     return Consumer2<ControlNotifier, PaintingNotifier>(
       builder: (context, controlNotifier, paintingNotifier, child) {
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30.w, vertical: 20.h).r,
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20).r,
           child: Container(
             color: Colors.transparent,
             child: Row(

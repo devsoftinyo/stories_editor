@@ -74,7 +74,7 @@ class BottomTools extends StatelessWidget {
                                   width: 45.w,
                                   color: Colors.transparent,
                                   child: Transform.scale(
-                                    scale: 0.7.r,
+                                    scale: 0.7,
                                     child: const Icon(
                                       Icons.delete,
                                       color: Colors.white,
@@ -112,7 +112,7 @@ class BottomTools extends StatelessWidget {
                             'Stories Creator',
                             style: TextStyle(
                                 color: Colors.white38,
-                                letterSpacing: 1.5.r,
+                                letterSpacing: 1.5,
                                 fontSize: 9.2.sp,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -126,7 +126,7 @@ class BottomTools extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.centerRight,
                     child: Transform.scale(
-                      scale: 0.9.r,
+                      scale: 0.9,
                       child: AnimatedOnTapButton(
                           onTap: () async {
                             String pngUri;
