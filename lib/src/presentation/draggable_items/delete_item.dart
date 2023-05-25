@@ -46,7 +46,7 @@ class DeleteItem extends StatelessWidget {
                     ),
                     child: deletedItem == null
                         ? Transform.scale(
-                            scale: 1.r,
+                            scale: 1,
                             child: ClipRRect(
                               borderRadius: BorderRadius.circular(360),
                               child: deletedItem,
