@@ -19,7 +19,7 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
     return Consumer2<ControlNotifier, PaintingNotifier>(
       builder: (context, controlNotifier, paintingNotifier, child) {
         return Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 20).r,
+          padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20).r,
           child: Container(
             color: Colors.transparent,
             child: Row(
@@ -34,7 +34,7 @@ class _TopPaintingToolsState extends State<TopPaintingTools> {
                     padding: const EdgeInsets.symmetric(horizontal: 5).r,
                     backGroundColor: Colors.black12,
                     child: Transform.scale(
-                        scale: 0.6.r,
+                        scale: 0.6,
                         child: const ImageIcon(
                           AssetImage('assets/icons/return.png',
                               package: 'stories_editor'),
