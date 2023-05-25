@@ -76,7 +76,7 @@ class ColorSelector extends StatelessWidget {
                                   color: controlProvider.colorList![index],
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                      color: Colors.white, width: 1.5.w)),
+                                      color: Colors.amber, width: 1.5.w)),
                             ),
                           ),
                         );
