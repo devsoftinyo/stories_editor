@@ -20,7 +20,7 @@ class ColorSelector extends StatelessWidget {
             /// current selected color
             Container(
               height: 120.h,
-              width: 120.w,
+              //width: 120.w,
               alignment: Alignment.center,
               decoration: BoxDecoration(
                   color: controlProvider.isPainting
