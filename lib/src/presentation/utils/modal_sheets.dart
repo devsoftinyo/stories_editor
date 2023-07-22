@@ -91,7 +91,8 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   AnimatedOnTapButton(
                     onTap: () async {
                       //_resetDefaults(context: context);
-                      Navigator.of(context).pop(true);
+                        Navigator.of(context).pop(true);
+                        log("çıkmak istedi");
                     },
                     child: Text(
                       langDataGlobal.dialog!.delete.toString(),
