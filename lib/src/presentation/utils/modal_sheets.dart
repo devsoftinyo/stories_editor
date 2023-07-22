@@ -90,7 +90,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   /// Sil Butonu,basıldığında kaydetmeden çıkar
                   AnimatedOnTapButton(
                     onTap: () async {
-                      _resetDefaults(context: context);
+                      //_resetDefaults(context: context);
                       Navigator.of(context).pop(true);
                     },
                     child: Text(
