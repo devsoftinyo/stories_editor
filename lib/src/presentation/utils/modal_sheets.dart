@@ -92,10 +92,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   AnimatedOnTapButton(
                     onTap: () async {
                       //_resetDefaults(context: context);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ScreenBridge()));
+                      Navigator.pop(context);
                       print("çıkmak istedi222");
                     },
                     child: Text(
