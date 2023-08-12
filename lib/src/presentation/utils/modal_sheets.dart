@@ -13,6 +13,7 @@ import 'package:stories_editor/src/presentation/utils/Extensions/hexColor.dart';
 import 'package:stories_editor/src/presentation/utils/constants/app_enums.dart';
 import 'package:stories_editor/src/presentation/widgets/animated_onTap_button.dart';
 import 'package:stories_editor/stories_editor.dart';
+import 'package:fenolive/view/page/screen_bridge/screen_bridge.dart';
 
 /// create item of type GIF
 Future createGiphyItem(
