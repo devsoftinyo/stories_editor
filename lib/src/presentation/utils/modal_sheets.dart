@@ -91,11 +91,14 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                   AnimatedOnTapButton(
                     onTap: () async {
                       //_resetDefaults(context: context);
-                   Navigator.of(context).push(MaterialPageRoute(builder: (context) => FeedScreen());
-                      print("çıkmak istedi");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ScreenBridge()));
+                      print("çıkmak istedi222");
                     },
                     child: Text(
-                      langDataGlobal.dialog!.delete.toString(),
+                      "İptal Et",
                       style: TextStyle(
                           fontSize: 16.sp,
                           color: Colors.redAccent.shade200,
@@ -161,7 +164,7 @@ Future<bool> exitDialog({required context, required contentKey}) async {
                       Navigator.of(context).pop(false);
                     },
                     child: Text(
-                      langDataGlobal.dialog!.quit.toString(),
+                      "Vazgeç",
                       style: TextStyle(
                           fontSize: 16.sp,
                           color: Colors.white,
